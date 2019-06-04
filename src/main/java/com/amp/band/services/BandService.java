@@ -22,10 +22,6 @@ public interface BandService {
 
 	Iterable<Band> findAllById(Iterable<Long> ids);
 	
-	Iterable<Band> findAll(Sort sort);
-	
-	Page<Band> findAll(Pageable pageable);
-
 	long count();
 	
 	void deleteById(Long id);

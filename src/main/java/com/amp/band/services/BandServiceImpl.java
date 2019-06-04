@@ -74,17 +74,4 @@ public class BandServiceImpl implements BandService {
 	public void deleteAll() {
 		bandRepository.deleteAll();
 	}
-
-	@Override
-	public Iterable<Band> findAll(Sort sort) {
-		return null;
-		//return bandRepository.findAll(sort);
-	}
-
-	@Override
-	public Page<Band> findAll(Pageable pageable) {
-		return null;
-		//return bandRepository.findAll(pageable);
-	}
-
 }
