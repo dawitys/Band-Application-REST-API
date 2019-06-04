@@ -8,11 +8,11 @@ import org.springframework.data.domain.Sort;
 
 import com.amp.band.domains.Band;
 
-public interface TacoService {
+public interface BandService {
 
-	public Band save(Band ingredient);
+	public Band save(Band band);
 	
-	public Iterable<Band> saveAll(Iterable<Band> tacos);
+	public Iterable<Band> saveAll(Iterable<Band> bands);
 
 	Optional<Band> findById(Long id);
 
@@ -30,9 +30,9 @@ public interface TacoService {
 	
 	void deleteById(Long id);
 	
-	void delete(Band taco);
+	void delete(Band band);
 	
-	void deleteAll(Iterable<Band> tacos);
+	void deleteAll(Iterable<Band> bands);
 
 	void deleteAll();
 }

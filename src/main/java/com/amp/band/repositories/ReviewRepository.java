@@ -1,7 +1,7 @@
 package com.amp.band.repositories;
 
 import org.springframework.data.repository.CrudRepository;
-import com.amp.band.domains.Band;
+import com.amp.band.domains.Review;
 
-public interface ReviewRepository extends CrudRepository<Band, Long>{
+public interface ReviewRepository extends CrudRepository<Review, Long>{
 }

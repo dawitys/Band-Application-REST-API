@@ -7,83 +7,84 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
-
 import com.amp.band.domains.Band;
-import com.amp.band.repositories.TacoRepository;
+import com.amp.band.repositories.BandRepository;
 
 @Service
-public class TacoServiceImpl implements TacoService {
+public class BandServiceImpl implements BandService {
 	
-	TacoRepository tacoRepository;
+	BandRepository bandRepository;
 
 	@Autowired
-	public TacoServiceImpl(TacoRepository tacoRepository) {
-		this.tacoRepository = tacoRepository;
+	public BandServiceImpl(BandRepository BandRepository) {
+		this.bandRepository = BandRepository;
 	}
 
 	@Override
 	public Band save(Band ingredient) {
-		return tacoRepository.save(ingredient);
+		return bandRepository.save(ingredient);
 	}
 
 	@Override
-	public Iterable<Band> saveAll(Iterable<Band> tacos) {
-		return tacoRepository.saveAll(tacos);
+	public Iterable<Band> saveAll(Iterable<Band> Bands) {
+		return bandRepository.saveAll(Bands);
 	}
 
 	@Override
 	public Optional<Band> findById(Long id) {
-		return tacoRepository.findById(id);
+		return bandRepository.findById(id);
 	}
 
 	@Override
 	public boolean existsById(Long id) {
-		return tacoRepository.existsById(id);
+		return bandRepository.existsById(id);
 	}
 
 	@Override
 	public Iterable<Band> findAll() {
-		return tacoRepository.findAll();
+		return bandRepository.findAll();
 	}
 
 	@Override
 	public Iterable<Band> findAllById(Iterable<Long> ids) {
-		return tacoRepository.findAllById(ids);
+		return bandRepository.findAllById(ids);
 	}
 
 	@Override
 	public long count() {
-		return tacoRepository.count();
+		return bandRepository.count();
 	}
 
 	@Override
 	public void deleteById(Long id) {
-		tacoRepository.deleteById(id);
+		bandRepository.deleteById(id);
 	}
 
 	@Override
-	public void delete(Band taco) {
-		tacoRepository.delete(taco);
+	public void delete(Band Band) {
+		bandRepository.delete(Band);
 	}
 
 	@Override
-	public void deleteAll(Iterable<Band> tacos) {
-		tacoRepository.deleteAll(tacos);
+	public void deleteAll(Iterable<Band> Bands) {
+		bandRepository.deleteAll(Bands);
 	}
 
 	@Override
 	public void deleteAll() {
-		tacoRepository.deleteAll();
+		bandRepository.deleteAll();
 	}
 
 	@Override
 	public Iterable<Band> findAll(Sort sort) {
-		return tacoRepository.findAll(sort);
+		return null;
+		//return bandRepository.findAll(sort);
 	}
 
 	@Override
 	public Page<Band> findAll(Pageable pageable) {
-		return tacoRepository.findAll(pageable);
+		return null;
+		//return bandRepository.findAll(pageable);
 	}
 
 }

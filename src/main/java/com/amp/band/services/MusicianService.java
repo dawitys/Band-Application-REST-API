@@ -4,9 +4,9 @@ import java.util.Optional;
 
 import com.amp.band.domains.Musician;
 
-public interface IngredientService {
+public interface MusicianService {
 	
-	public Musician save(Musician ingredient);
+	public Musician save(Musician musician);
 	
 	public Iterable<Musician> saveAll(Iterable<Musician> ingredients);
 
@@ -22,9 +22,9 @@ public interface IngredientService {
 	
 	void deleteById(Long id);
 	
-	void delete(Musician ingredient);
+	void delete(Musician musician);
 	
-	void deleteAll(Iterable<Musician> ingredients);
+	void deleteAll(Iterable<Musician> musicians);
 
 	void deleteAll();
 }

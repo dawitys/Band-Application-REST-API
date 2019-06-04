@@ -4,11 +4,11 @@ import java.util.Optional;
 
 import com.amp.band.domains.Event;
 
-public interface OrderService {
+public interface EventService {
 
-	public Event save(Event order);
+	public Event save(Event event);
 	
-	public Iterable<Event> saveAll(Iterable<Event> orders);
+	public Iterable<Event> saveAll(Iterable<Event> events);
 
 	Optional<Event> findById(Long id);
 
@@ -22,9 +22,9 @@ public interface OrderService {
 	
 	void deleteById(Long id);
 	
-	void delete(Event order);
+	void delete(Event event);
 	
-	void deleteAll(Iterable<Event> orders);
+	void deleteAll(Iterable<Event> events);
 
 	void deleteAll();
 }
