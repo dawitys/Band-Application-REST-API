@@ -16,18 +16,21 @@ import lombok.RequiredArgsConstructor;
 @Entity
 @NoArgsConstructor(access=AccessLevel.PRIVATE, force=true)
 @RequiredArgsConstructor
-public class Ingredient
+public class Musician
 {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private final Long id;
-	private final String name;
+	
+	private final String username;
+	
+	private final String full_name;
 	
 	@Enumerated(EnumType.STRING)
-	private final Type type;
+	private final Skill skill;
 	
-	public static enum Type {
-		WRAP, PROTEIN, VEGGIES, CHEESE, SAUCE
+	public static enum Skill {
+		VOCALIST, BASSIST, PIANIST, GUITARIST, DRUMMER, KEYBOARDIST,MUSICIAN
 	}
 
 }

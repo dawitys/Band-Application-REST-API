@@ -2,29 +2,29 @@ package com.amp.band.services;
 
 import java.util.Optional;
 
-import com.amp.band.domains.Ingredient;
+import com.amp.band.domains.Musician;
 
 public interface IngredientService {
 	
-	public Ingredient save(Ingredient ingredient);
+	public Musician save(Musician ingredient);
 	
-	public Iterable<Ingredient> saveAll(Iterable<Ingredient> ingredients);
+	public Iterable<Musician> saveAll(Iterable<Musician> ingredients);
 
-	Optional<Ingredient> findById(Long id);
+	Optional<Musician> findById(Long id);
 
 	boolean existsById(Long id);
 	
-	Iterable<Ingredient> findAll();
+	Iterable<Musician> findAll();
 
-	Iterable<Ingredient> findAllById(Iterable<Long> ids);
+	Iterable<Musician> findAllById(Iterable<Long> ids);
 
 	long count();
 	
 	void deleteById(Long id);
 	
-	void delete(Ingredient ingredient);
+	void delete(Musician ingredient);
 	
-	void deleteAll(Iterable<Ingredient> ingredients);
+	void deleteAll(Iterable<Musician> ingredients);
 
 	void deleteAll();
 }

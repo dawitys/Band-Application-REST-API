@@ -5,7 +5,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.amp.band.domains.Order;
+import com.amp.band.domains.Event;
 import com.amp.band.repositories.OrderRepository;
 
 @Service
@@ -19,17 +19,17 @@ public class OrderServiceImpl implements OrderService {
 	}
 
 	@Override
-	public Order save(Order order) {
+	public Event save(Event order) {
 		return orderRepository.save(order);
 	}
 
 	@Override
-	public Iterable<Order> saveAll(Iterable<Order> orders) {
+	public Iterable<Event> saveAll(Iterable<Event> orders) {
 		return orderRepository.saveAll(orders);
 	}
 
 	@Override
-	public Optional<Order> findById(Long id) {
+	public Optional<Event> findById(Long id) {
 		return orderRepository.findById(id);
 	}
 
@@ -39,12 +39,12 @@ public class OrderServiceImpl implements OrderService {
 	}
 
 	@Override
-	public Iterable<Order> findAll() {
+	public Iterable<Event> findAll() {
 		return orderRepository.findAll();
 	}
 
 	@Override
-	public Iterable<Order> findAllById(Iterable<Long> ids) {
+	public Iterable<Event> findAllById(Iterable<Long> ids) {
 		return orderRepository.findAllById(ids);
 	}
 
@@ -59,12 +59,12 @@ public class OrderServiceImpl implements OrderService {
 	}
 
 	@Override
-	public void delete(Order order) {
+	public void delete(Event order) {
 		orderRepository.delete(order);
 	}
 
 	@Override
-	public void deleteAll(Iterable<Order> orders) {
+	public void deleteAll(Iterable<Event> orders) {
 		orderRepository.deleteAll(orders);
 
 	}

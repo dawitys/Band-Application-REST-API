@@ -2,29 +2,29 @@ package com.amp.band.services;
 
 import java.util.Optional;
 
-import com.amp.band.domains.Order;
+import com.amp.band.domains.Event;
 
 public interface OrderService {
 
-	public Order save(Order order);
+	public Event save(Event order);
 	
-	public Iterable<Order> saveAll(Iterable<Order> orders);
+	public Iterable<Event> saveAll(Iterable<Event> orders);
 
-	Optional<Order> findById(Long id);
+	Optional<Event> findById(Long id);
 
 	boolean existsById(Long id);
 	
-	Iterable<Order> findAll();
+	Iterable<Event> findAll();
 
-	Iterable<Order> findAllById(Iterable<Long> ids);
+	Iterable<Event> findAllById(Iterable<Long> ids);
 
 	long count();
 	
 	void deleteById(Long id);
 	
-	void delete(Order order);
+	void delete(Event order);
 	
-	void deleteAll(Iterable<Order> orders);
+	void deleteAll(Iterable<Event> orders);
 
 	void deleteAll();
 }

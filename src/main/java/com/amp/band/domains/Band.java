@@ -19,7 +19,7 @@ import lombok.Data;
 
 @Data
 @Entity
-@RestResource(rel="tacos", path="tacos")
+@RestResource(rel="bands", path="bands")
 public class Band {
 	
 	@Id
@@ -37,6 +37,6 @@ public class Band {
 	private String name;
 	
 	@ManyToMany
-	private Set<Ingredient> ingredients = new HashSet<>();
+	private Set<Musician> members = new HashSet<>();
 
 }
