@@ -2,7 +2,7 @@ package com.amp.band.repositories;
 
 import org.springframework.data.repository.PagingAndSortingRepository;
 
-import com.amp.band.domains.Taco;
+import com.amp.band.domains.Band;
 
-public interface TacoRepository extends PagingAndSortingRepository<Taco, Long>{
+public interface TacoRepository extends PagingAndSortingRepository<Band, Long>{
 }

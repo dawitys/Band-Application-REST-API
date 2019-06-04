@@ -68,9 +68,9 @@ public class Order {
 	private String ccCVV;
 	
 	@ManyToMany
-	private Set<Taco> tacos = new HashSet<>();
+	private Set<Band> tacos = new HashSet<>();
 	
-	public void addTacoDesign(Taco tacoDesign) {
+	public void addTacoDesign(Band tacoDesign) {
 		this.tacos.add(tacoDesign);
 	}
 

@@ -20,7 +20,7 @@ import lombok.Data;
 @Data
 @Entity
 @RestResource(rel="tacos", path="tacos")
-public class Taco {
+public class Band {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)

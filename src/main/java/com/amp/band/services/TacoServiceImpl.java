@@ -8,7 +8,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
-import com.amp.band.domains.Taco;
+import com.amp.band.domains.Band;
 import com.amp.band.repositories.TacoRepository;
 
 @Service
@@ -22,17 +22,17 @@ public class TacoServiceImpl implements TacoService {
 	}
 
 	@Override
-	public Taco save(Taco ingredient) {
+	public Band save(Band ingredient) {
 		return tacoRepository.save(ingredient);
 	}
 
 	@Override
-	public Iterable<Taco> saveAll(Iterable<Taco> tacos) {
+	public Iterable<Band> saveAll(Iterable<Band> tacos) {
 		return tacoRepository.saveAll(tacos);
 	}
 
 	@Override
-	public Optional<Taco> findById(Long id) {
+	public Optional<Band> findById(Long id) {
 		return tacoRepository.findById(id);
 	}
 
@@ -42,12 +42,12 @@ public class TacoServiceImpl implements TacoService {
 	}
 
 	@Override
-	public Iterable<Taco> findAll() {
+	public Iterable<Band> findAll() {
 		return tacoRepository.findAll();
 	}
 
 	@Override
-	public Iterable<Taco> findAllById(Iterable<Long> ids) {
+	public Iterable<Band> findAllById(Iterable<Long> ids) {
 		return tacoRepository.findAllById(ids);
 	}
 
@@ -62,12 +62,12 @@ public class TacoServiceImpl implements TacoService {
 	}
 
 	@Override
-	public void delete(Taco taco) {
+	public void delete(Band taco) {
 		tacoRepository.delete(taco);
 	}
 
 	@Override
-	public void deleteAll(Iterable<Taco> tacos) {
+	public void deleteAll(Iterable<Band> tacos) {
 		tacoRepository.deleteAll(tacos);
 	}
 
@@ -77,12 +77,12 @@ public class TacoServiceImpl implements TacoService {
 	}
 
 	@Override
-	public Iterable<Taco> findAll(Sort sort) {
+	public Iterable<Band> findAll(Sort sort) {
 		return tacoRepository.findAll(sort);
 	}
 
 	@Override
-	public Page<Taco> findAll(Pageable pageable) {
+	public Page<Band> findAll(Pageable pageable) {
 		return tacoRepository.findAll(pageable);
 	}
 

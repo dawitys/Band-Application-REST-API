@@ -6,33 +6,33 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 
-import com.amp.band.domains.Taco;
+import com.amp.band.domains.Band;
 
 public interface TacoService {
 
-	public Taco save(Taco ingredient);
+	public Band save(Band ingredient);
 	
-	public Iterable<Taco> saveAll(Iterable<Taco> tacos);
+	public Iterable<Band> saveAll(Iterable<Band> tacos);
 
-	Optional<Taco> findById(Long id);
+	Optional<Band> findById(Long id);
 
 	boolean existsById(Long id);
 	
-	Iterable<Taco> findAll();
+	Iterable<Band> findAll();
 
-	Iterable<Taco> findAllById(Iterable<Long> ids);
+	Iterable<Band> findAllById(Iterable<Long> ids);
 	
-	Iterable<Taco> findAll(Sort sort);
+	Iterable<Band> findAll(Sort sort);
 	
-	Page<Taco> findAll(Pageable pageable);
+	Page<Band> findAll(Pageable pageable);
 
 	long count();
 	
 	void deleteById(Long id);
 	
-	void delete(Taco taco);
+	void delete(Band taco);
 	
-	void deleteAll(Iterable<Taco> tacos);
+	void deleteAll(Iterable<Band> tacos);
 
 	void deleteAll();
 }
