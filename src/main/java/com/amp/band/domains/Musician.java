@@ -1,5 +1,6 @@
 package com.amp.band.domains;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -22,9 +23,8 @@ public class Musician
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private final Long id;
 	
-	private final String username;
-	
-	private final String full_name;
+	@Column(name="full_name")
+	private final String name;
 	
 	@Enumerated(EnumType.STRING)
 	private final Skill skill;

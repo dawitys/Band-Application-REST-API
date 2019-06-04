@@ -8,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.PrePersist;
 import javax.persistence.Table;
@@ -23,6 +25,10 @@ public class Schedule{
 	private Long id;
 	
 	private Date createdAt;
+	
+	@ManyToOne
+	@JoinColumn(name="band_id")
+	private  Band scheduledBy;
 	
 	@Column(name="schedule_time")
 	private Date scheduleTime;

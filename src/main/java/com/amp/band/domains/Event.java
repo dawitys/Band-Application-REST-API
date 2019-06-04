@@ -9,17 +9,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.PrePersist;
 import javax.persistence.Table;
-import javax.validation.constraints.Digits;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Pattern;
-
-import org.hibernate.annotations.ForeignKey;
-import org.hibernate.validator.constraints.CreditCardNumber;
 
 import lombok.Data;
 
@@ -33,6 +26,10 @@ public class Event {
 	private Long id;
 	
 	private Date createdAt;
+	
+	@ManyToOne
+	@JoinColumn(name="band_id")
+	private  Band eventBy;
 	
 	@Column(name="event_time")
 	private Date eventTime;
