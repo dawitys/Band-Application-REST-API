@@ -24,15 +24,21 @@ public class Schedule{
 	
 	private Date createdAt;
 	
+	@Column(name="schedule_time")
+	private Date scheduleTime;
+	
+	@Column(name = "schedule_place")
+	private String schedulePlace;
+   	
+	@Column(name="geo_location")
+	private String geoLocation;
+	
+	@Column(name="schedule_type")
+	private String scheduletype;
+	
 	@PrePersist
 	void placedAt() {
 		this.createdAt = new Date();
-	}	
-	
-	@Column(name = "schedule")
-	private String schedule_;
-    
-	@OneToMany
-	private Band band;
+	}
 }
 

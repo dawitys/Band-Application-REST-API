@@ -33,17 +33,19 @@ public class Event {
 	private Long id;
 	
 	private Date createdAt;
+	
+	@Column(name="event_time")
+	private Date eventTime;
+	
+	@Column(name = "event_place")
+	private String eventPlace;
+   	
+	@Column(name="geo_location")
+	private String geoLocation;
+	
 	@PrePersist
 	void placedAt() {
 		this.createdAt = new Date();
-	}	
-	
-	@Column(name = "first_name")
-	private String firstName;
-    
-	@OneToMany
-	private Band band;
-
-
+	}
 }
 
