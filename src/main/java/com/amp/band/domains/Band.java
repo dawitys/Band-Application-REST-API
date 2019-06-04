@@ -4,17 +4,14 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.PrePersist;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
-
 import org.springframework.data.rest.core.annotation.RestResource;
-
 import lombok.Data;
 
 @Data
@@ -28,15 +25,21 @@ public class Band {
 	
 	private Date createdAt;
 	
-	@PrePersist
-	void createdAt() {
-		this.createdAt = new Date();
-	}	
-	@NotNull
-	@Size(min=5, message="Name must be at least 5 characters long")
+	@Column(name="band_name")
 	private String name;
+	
+	@Column(name="genre")
+	private String genre;
+	
+	@Column(name="contact_info")
+	private String contactInfo;
 	
 	@ManyToMany
 	private Set<Musician> members = new HashSet<>();
+	
+	@PrePersist
+	void createdAt() {
+		this.createdAt = new Date();
+	}
 
 }
