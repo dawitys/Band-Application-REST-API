@@ -1,2 +1,4 @@
-# Band Application Rest Web Service
-This project is a rest web service which is used as remote data source for https://github.com/dawityonas010/band-communicating-application[ Android Mobile App ]
+# Band Application RESTful Web Service
+This project is a *RESTful web service* implemented with *spring boot*.
+
+And it is used as remote data source for [Band Communicating Application](https://github.com/dawityonas010/Bands-commnicating-App)
