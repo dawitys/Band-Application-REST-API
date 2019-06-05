@@ -26,12 +26,12 @@ public class Review {
 	private Date createdAt;
 	
 	@OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "user_id")
-    private User user;	
+    	@JoinColumn(name = "user_id")
+    	private User user;	
 	
 	@OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "band_id")
-    private Band band;	
+    	@JoinColumn(name = "band_id")
+    	private Band band;	
 	
 	@Column(name = "review_value")
 	private String value;
