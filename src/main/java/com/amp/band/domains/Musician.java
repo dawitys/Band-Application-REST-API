@@ -19,19 +19,17 @@ import lombok.RequiredArgsConstructor;
 @Data
 @Entity
 @Table(name="musicians")
-@NoArgsConstructor(access=AccessLevel.PRIVATE, force=true)
-@RequiredArgsConstructor
 public class Musician
 {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private final Long id;
+	private Long id;
 		
 	@Column(name="full_name")
-	private final String name;
+	private String name;
 	
 	@Enumerated(EnumType.STRING)
-	private final Skill skill;
+	private Skill skill;
 	
 	@OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id")
