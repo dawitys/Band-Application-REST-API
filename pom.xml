@@ -9,7 +9,7 @@
 	<packaging>jar</packaging>
 
 	<name>band-app</name>
-	<description>Taco Cloud Example</description>
+	<description>Band Application</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>

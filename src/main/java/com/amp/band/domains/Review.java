@@ -1,7 +1,6 @@
 package com.amp.band.domains;
 
 import java.util.Date;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -12,7 +11,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.PrePersist;
 import javax.persistence.Table;
-
 import lombok.Data;
 
 @Data
@@ -40,7 +38,7 @@ public class Review {
 	private String content;
     
 	@PrePersist
-	void placedAt() {
+	void createdAt() {
 		this.createdAt = new Date();
 	}
 }

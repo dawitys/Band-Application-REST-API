@@ -1,7 +1,6 @@
 package com.amp.band.services;
 
 import java.util.Optional;
-
 import com.amp.band.domains.Event;
 
 public interface EventService {

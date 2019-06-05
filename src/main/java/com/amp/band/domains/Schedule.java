@@ -1,8 +1,6 @@
 package com.amp.band.domains;
 
 import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,7 +8,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.PrePersist;
 import javax.persistence.Table;
 
@@ -31,19 +28,19 @@ public class Schedule{
 	private  Band scheduledBy;
 	
 	@Column(name="schedule_time")
-	private Date scheduleTime;
+	private Date time;
 	
 	@Column(name = "schedule_place")
-	private String schedulePlace;
+	private String place;
    	
 	@Column(name="geo_location")
 	private String geoLocation;
 	
 	@Column(name="schedule_type")
-	private String scheduletype;
+	private String scheduleType;
 	
 	@PrePersist
-	void placedAt() {
+	void createdAt() {
 		this.createdAt = new Date();
 	}
 }
