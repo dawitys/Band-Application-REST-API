@@ -32,7 +32,7 @@ public class Review {
     private Band band;	
 	
 	@Column(name = "review_value")
-	private String value;
+	private int value;
 	
 	@Column(name = "review_content")
 	private String content;
