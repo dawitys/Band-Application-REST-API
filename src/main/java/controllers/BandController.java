@@ -39,7 +39,7 @@ public class BandController {
 		    Optional<Band> optionalBand = bandRepository.findById(bid);
 		    try {
 		    	Band band=optionalBand.get();
-		    	band.getMembers().add(user);		    	
+		    	//band.getMembers().add(user);		    	
 		    }catch(Exception e){
 		    	
 		    }
