@@ -2,15 +2,20 @@ package com.amp.band.domains;
 
 import java.util.Date;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.PrePersist;
 import javax.persistence.Table;
 
@@ -37,13 +42,23 @@ public class Band {
 	
 	@ManyToOne
 	@JoinColumn(name="leader_id")
-	private Musician leader;
+	private User leader;
 	
 	@Column(name="contact_info")
 	private String contactInfo;
 	
-	@ManyToMany
-	private Set<Musician> members = new HashSet<>();
+	@ManyToMany(cascade = CascadeType.ALL)
+	@JoinTable(name = "band_members", 
+		      joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"), 
+		      inverseJoinColumns = @JoinColumn(name = "band_id", 
+		      referencedColumnName = "id"))
+	private List<User> members;
+	
+	@OneToMany(mappedBy = "eventBy")
+    private List<Event> events;
+	
+	@OneToMany(mappedBy = "scheduledBy")
+    private List<Schedule> schedules;
 	
 	@PrePersist
 	void createdAt() {
