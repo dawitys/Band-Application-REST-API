@@ -30,35 +30,35 @@ public class Band {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Long id;
+	public Long id;
 	
-	private Date createdAt;
+	public Date createdAt;
 	
 	@Column(name="band_name")
-	private String name;
+	public String name;
 	
 	@Column(name="genre")
-	private String genre;
+	public String genre;
 	
 	@ManyToOne
 	@JoinColumn(name="leader_id")
-	private User leader;
+	public User leader;
 	
 	@Column(name="contact_info")
-	private String contactInfo;
+	public String contactInfo;
 	
 	@ManyToMany(cascade = CascadeType.ALL)
 	@JoinTable(name = "band_members", 
 		      joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"), 
 		      inverseJoinColumns = @JoinColumn(name = "band_id", 
 		      referencedColumnName = "id"))
-	private List<User> members;
+	public List<User> members;
 	
 	@OneToMany(mappedBy = "eventBy")
-    private List<Event> events;
+    public List<Event> events;
 	
 	@OneToMany(mappedBy = "scheduledBy")
-    private List<Schedule> schedules;
+    public List<Schedule> schedules;
 	
 	@PrePersist
 	void createdAt() {

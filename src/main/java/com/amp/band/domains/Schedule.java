@@ -19,25 +19,25 @@ import lombok.Data;
 public class Schedule{
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Long id;
+	public Long id;
 	
-	private Date createdAt;
+	public Date createdAt;
 	
 	@ManyToOne
 	@JoinColumn(name="band_id")
-	private  Band scheduledBy;
+	public  Band scheduledBy;
 	
 	@Column(name="schedule_time")
-	private Date time;
+	public Date time;
 	
 	@Column(name = "schedule_place")
-	private String place;
+	public String place;
    	
 	@Column(name="geo_location")
-	private String geoLocation;
+	public String geoLocation;
 	
 	@Column(name="schedule_type")
-	private String scheduleType;
+	public String scheduleType;
 	
 	@PrePersist
 	void createdAt() {

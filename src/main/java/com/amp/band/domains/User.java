@@ -25,22 +25,22 @@ import lombok.Data;
 public class User{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    public Long id;
     
-    private String username;
+    public String username;
     
-    private String password;
+    public String password;
 
 	@Column(name="full_name")
-	private String name;
+	public String name;
 	
 	@Enumerated(EnumType.STRING)
-	private Skill majorSkill;
+	public Skill majorSkill;
 	
-	private String skills;
+	public String skills;
 	
 	@ManyToMany(mappedBy = "members")
-    private List<Band> bands;
+    public List<Band> bands;
 	
 	public static enum Skill {
 		VOCALIST, BASSIST, PIANIST, GUITARIST, DRUMMER, KEYBOARDIST,MUSICIAN

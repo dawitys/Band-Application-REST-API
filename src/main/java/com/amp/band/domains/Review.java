@@ -19,23 +19,23 @@ import lombok.Data;
 public class Review {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Long id;
+	public Long id;
 	
-	private Date createdAt;
+	public Date createdAt;
 	
 	@OneToOne(cascade = CascadeType.ALL)
     	@JoinColumn(name = "user_id")
-    	private User user;	
+    	public User user;	
 	
 	@OneToOne(cascade = CascadeType.ALL)
     	@JoinColumn(name = "band_id")
-    	private Band band;	
+    	public Band band;	
 	
 	@Column(name = "review_value")
-	private int value;
+	public int value;
 	
 	@Column(name = "review_content")
-	private String content;
+	public String content;
     
 	@PrePersist
 	void createdAt() {

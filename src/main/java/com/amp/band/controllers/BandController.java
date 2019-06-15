@@ -1,7 +1,11 @@
 package com.amp.band.controllers;
 
 
+import java.net.URI;
 import java.util.Optional;
+
+import javax.jws.soap.SOAPBinding.Use;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
 import org.springframework.http.HttpHeaders;
@@ -34,17 +38,19 @@ public class BandController {
 	    this.bandRepository = bandRepository;
 	  }
 	  
-	  @PostMapping("/{bid}/members/")
-	  public void adduserToBand(@RequestBody User user,@Param("bid") Long bid) {
+	  @PostMapping("/{bid}/members/{uid}")
+	  public ResponseEntity<User> adduserToBand(@Param("uid") Long uid,@Param("bid") Long bid) {
 		    Optional<Band> optionalBand = bandRepository.findById(bid);
+		    User u = null;
 		    try {
 		    	Band band=optionalBand.get();
-		    	//band.getMembers().add(user);		    	
+		    	u=userRepository.findById(uid).get();
+		    	band.members.add(u);		    	
 		    }catch(Exception e){
 		    	
 		    }
-		    //HttpHeaders headers = new HttpHeaders();
-		    //headers.setLocation(URI.create("http://localhost:8080/ingredients/" + ingredient.getId()));
-		    //return new ResponseEntity<>(user, HttpStatus.CREATED);
+		    HttpHeaders headers = new HttpHeaders();
+		    headers.setLocation(URI.create("http://localhost:8080/user/" + u.id));
+		    return new ResponseEntity<>(u, HttpStatus.CREATED);
 		  }
 }

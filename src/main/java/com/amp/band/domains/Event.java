@@ -18,22 +18,22 @@ import lombok.Data;
 public class Event {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Long id;
+	public Long id;
 	
-	private Date createdAt;
+	public Date createdAt;
 	
 	@ManyToOne
 	@JoinColumn(name="band_id")
-	private Band eventBy;
+	public Band eventBy;
 	
 	@Column(name="event_time")
-	private Date time;
+	public Date time;
 	
 	@Column(name = "event_place")
-	private String place;
+	public String place;
    	
 	@Column(name="geo_location")
-	private String geoLocation;
+	public String geoLocation;
 	
 	@PrePersist
 	void createdAt() {
