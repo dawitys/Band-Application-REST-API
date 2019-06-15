@@ -1,4 +1,4 @@
-package controllers;
+package com.amp.band.controllers;
 
 
 import java.util.Optional;
