@@ -12,7 +12,6 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
-import javax.validation.Constraint;
 
 import lombok.Data;
 
@@ -23,6 +22,7 @@ import lombok.Data;
 	)
 )
 public class User{
+	
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long id;

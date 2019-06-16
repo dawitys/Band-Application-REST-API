@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.PrePersist;
 import javax.persistence.Table;
@@ -17,6 +18,7 @@ import lombok.Data;
 @Entity
 @Table(name="reviews")
 public class Review {
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	public Long id;
@@ -24,12 +26,12 @@ public class Review {
 	public Date createdAt;
 	
 	@OneToOne(cascade = CascadeType.ALL)
-    	@JoinColumn(name = "user_id")
-    	public User user;	
+    @JoinColumn(name = "user_id")
+   	public User user;	
 	
-	@OneToOne(cascade = CascadeType.ALL)
-    	@JoinColumn(name = "band_id")
-    	public Band band;	
+	@ManyToOne
+	@JoinColumn(name="band_id")
+	public Band reviewedBand;	
 	
 	@Column(name = "review_value")
 	public int value;

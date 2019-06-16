@@ -56,6 +56,9 @@ public class Band {
 	@OneToMany(mappedBy = "scheduledBy")
     public List<Schedule> schedules;
 	
+	@OneToMany(mappedBy = "reviewedBand")
+    public List<Review> reviews;
+	
 	@PrePersist
 	void createdAt() {
 		this.createdAt = new Date();

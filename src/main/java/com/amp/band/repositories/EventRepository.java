@@ -4,11 +4,8 @@ import java.util.List;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
-import org.springframework.data.repository.query.Param;
 
-import com.amp.band.domains.Band;
 import com.amp.band.domains.Event;
-import com.amp.band.domains.Schedule;
 
 public interface EventRepository extends CrudRepository<Event, Long>{
 
