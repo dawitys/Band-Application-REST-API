@@ -48,10 +48,6 @@ public class Band {
 	public String contactInfo;
 	
 	@ManyToMany(cascade = CascadeType.ALL)
-	@JoinTable(name = "band_members", 
-		      joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"), 
-		      inverseJoinColumns = @JoinColumn(name = "band_id", 
-		      referencedColumnName = "id"))
 	public List<User> members;
 	
 	@OneToMany(mappedBy = "eventBy")

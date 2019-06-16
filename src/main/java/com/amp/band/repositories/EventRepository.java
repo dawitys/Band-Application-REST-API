@@ -8,11 +8,12 @@ import org.springframework.data.repository.query.Param;
 
 import com.amp.band.domains.Band;
 import com.amp.band.domains.Event;
+import com.amp.band.domains.Schedule;
 
 public interface EventRepository extends CrudRepository<Event, Long>{
 
-	//@Query("SELECT e FROM events e WHERE e.band_id= ?1")
-	public List<Event> findAllByeventBy(Band bid);
+	@Query(value="select * from events left outer join bands_members on events.band_id=bands_members.bands_id where bands_members.members_id=?1",
+			nativeQuery=true)
+	public List<Event> findAllByMemberId(Long mid);
 	
-	//public String findAllByEventBy(Long bid);
 }
