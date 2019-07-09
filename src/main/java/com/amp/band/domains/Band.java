@@ -19,12 +19,10 @@ import javax.persistence.OneToMany;
 import javax.persistence.PrePersist;
 import javax.persistence.Table;
 
-import org.springframework.data.rest.core.annotation.RestResource;
 import lombok.Data;
 
 @Data
 @Entity
-@RestResource(rel="bands", path="bands")
 @Table(name="bands")
 public class Band {
 	
@@ -40,24 +38,24 @@ public class Band {
 	@Column(name="genre")
 	public String genre;
 	
-	@ManyToOne
-	@JoinColumn(name="leader_id")
-	public User leader;
+	//@ManyToOne
+	//@JoinColumn(name="leader_id")
+	//public User leader;
 	
 	@Column(name="contact_info")
 	public String contactInfo;
 	
-	@ManyToMany(cascade = CascadeType.ALL)
-	public List<User> members;
+	//@ManyToMany(mappedBy ="bands")
+	//public List<User> members;
 	
-	@OneToMany(mappedBy = "eventBy")
-    public List<Event> events;
+	//@OneToMany(mappedBy = "eventBy")
+    //public List<Event> events;
 	
-	@OneToMany(mappedBy = "scheduledBy")
-    public List<Schedule> schedules;
+	//@OneToMany(mappedBy = "scheduledBy")
+    //public List<Schedule> schedules;
 	
-	@OneToMany(mappedBy = "reviewedBand")
-    public List<Review> reviews;
+	//@OneToMany(mappedBy = "reviewedBand")
+    //public List<Review> reviews;
 	
 	@PrePersist
 	void createdAt() {

@@ -2,6 +2,7 @@ package com.amp.band.domains;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -39,7 +40,7 @@ public class User{
 	
 	public String skills;
 	
-	@ManyToMany(mappedBy = "members")
+	@ManyToMany(cascade = CascadeType.ALL)
     public List<Band> bands;
 	
 	public static enum Skill {
